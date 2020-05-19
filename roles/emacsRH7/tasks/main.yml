@@ -1,0 +1,23 @@
+---
+- name: Install snap
+  yum:
+    name: snapd
+    state: present
+
+- name: Enable Snap communications
+  shell: systemctl enable --now snapd.socket
+
+- name: Check if symlink for classic snap support exists
+  stat:
+    path: /var/lib/snapd/snap
+  register: snaplink
+
+- name: Create symlink for classic snap support
+  file:
+    src: /var/lib/snapd/snap 
+    dest: /snap
+    state: link
+  when: snaplink.stat.exists == false
+
+- name: Install Emacs
+  shell: snap install emacs --classic
