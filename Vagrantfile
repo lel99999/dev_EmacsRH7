@@ -69,7 +69,7 @@ Vagrant.configure("2") do |config|
 #   trigger.info = "Trigger Execution ..."
 #   trigger.run = { path:"subscription-manager register --username <username> --password <password> --auto-attach"}
 # end
-  config.vm.define "emacsRH7" do |sasRH7|
+  config.vm.define "emacsRH7" do |emacsRH7|
     emacsRH7.vm.box = "clouddood/RH7.5_baserepo"
     emacsRH7.vm.hostname = "sasRH7"
     emacsRH7.vm.network "private_network", ip: "192.168.60.157"
