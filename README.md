@@ -1,2 +1,2 @@
 # dev_EmacsRH7
-Updated Emacs for RHEL 7.x
+Many changes have been implemented for Emacs, specifically these updates are for RHEL 7.x
