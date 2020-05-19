@@ -17,7 +17,7 @@
 #     command: "/usr/bin/subscription-manager register --username {{ _uid }} --password {{ _pwd }} --auto-attach --force"
 #     when: _uid != "" and _pwd != ""
 #     command: "/usr/bin/subscription-manager register --username <name> --password <password> --auto-attach"
-    - name: register RHEL7 repo
+    - name: register RHEL7 repos necessary for Emacs (optional, extras)
       command: "/usr/bin/subscription-manager repos --enable=rhel-7-server-rpms --enable=rhel-7-server-extras-rpms --enable=rhel-7-server-optional-rpms"
     - name: register RHEL7 RHSCL Repo
       shell: "/usr/bin/subscription-manager repos --enable=rhel-server-rhscl-7-rpms"
@@ -30,10 +30,10 @@
         msg: "RHEL Enabled Repos: {{ enabled_repos }}"
 
   tasks:
-    - name: Install Development Tools
-      yum:
-        name: "@Development Tools"
-        state: present
+#   - name: Install Development Tools
+#     yum:
+#       name: "@Development Tools"
+#       state: present
 #     shell:  yum groupinstall "Development Tools" -y
 #   - name: Install X Windows
 #     yum:
