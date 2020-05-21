@@ -8,6 +8,12 @@
 #  yum;
 #    name: emacs
 #    state: present
+#- name: Configure alternatives for Emacs
+#  alternatives:
+#    name: emacs
+#    link: /usr/bin/emacs
+#    path: /usr/local/bin/emacs
+#    priority: 5
 
 - name: Enable Snap communications
   shell: systemctl enable --now snapd.socket
