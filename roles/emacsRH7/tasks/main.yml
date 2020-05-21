@@ -4,6 +4,11 @@
     name: snapd
     state: present
 
+#- name: Install Yum Emacs
+#  yum;
+#    name: emacs
+#    state: present
+
 - name: Enable Snap communications
   shell: systemctl enable --now snapd.socket
 
