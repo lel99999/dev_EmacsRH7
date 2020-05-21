@@ -26,3 +26,9 @@
 
 - name: Install Emacs
   shell: snap install emacs --classic
+
+- name: Add symlink for emacs
+  file:
+    src: /usr/bin/emacs
+    dest: /usr/local/bin/emacs
+    state: link
