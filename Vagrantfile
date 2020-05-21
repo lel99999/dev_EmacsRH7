@@ -71,10 +71,10 @@ Vagrant.configure("2") do |config|
 # end
   config.vm.define "emacsRH7" do |emacsRH7|
     emacsRH7.vm.box = "clouddood/RH7.5_baserepo"
-    emacsRH7.vm.hostname = "sasRH7"
-    emacsRH7.vm.network "private_network", ip: "192.168.60.157"
-#   emacsRH7.vm.network "private_network", ip: "192.168.60.157", nic_type: "virtio"
-    emacsRH7.vm.provision "shell", :inline => "sudo echo '192.168.60.157 emacsRH7.local emacsRH7' >> /etc/hosts"
+    emacsRH7.vm.hostname = "emacsRH7"
+    emacsRH7.vm.network "private_network", ip: "192.168.60.167"
+#   emacsRH7.vm.network "private_network", ip: "192.168.60.167", nic_type: "virtio"
+    emacsRH7.vm.provision "shell", :inline => "sudo echo '192.168.60.167 emacsRH7.local emacsRH7' >> /etc/hosts"
 
 ##  Use Main / Update in Vagrant provision command ### $vagrant provision --provision-with shell/main/update
 
