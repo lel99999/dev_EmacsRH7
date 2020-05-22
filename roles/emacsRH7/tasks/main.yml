@@ -1,9 +1,4 @@
 ---
-- name: Install snap
-  yum:
-    name: snapd
-    state: present
-
 #- name: Install Yum Emacs
 #  yum;
 #    name: emacs
@@ -14,6 +9,11 @@
 #    link: /usr/bin/emacs
 #    path: /usr/local/bin/emacs
 #    priority: 5
+
+- name: Install snap
+  yum:
+    name: snapd
+    state: present
 
 - name: Enable Snap communications
   shell: systemctl enable --now snapd.socket
