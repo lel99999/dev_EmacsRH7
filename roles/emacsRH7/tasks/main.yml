@@ -35,6 +35,8 @@
 
 - name: Install Emacs
   shell: snap install emacs --classic
+  become: yes
+  become_method: sudo
 
 - name: Add symlink for emacs
   file:
